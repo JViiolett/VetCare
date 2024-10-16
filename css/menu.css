@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* ancho */
+    height: 100vh; /* Alto */
+    background: #ffffff; /* Color de fondo más suave */
+    margin: 0;
+}
+header {
+    width: 100%;
+    height: 17vh;
+    background: #ffffff; /* Un verde más oscuro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.logo {
+    margin: 80px;
+}
+.logo img {
+    width: 45vh; /* Ajusta el tamaño del logo */
+    height: auto;
+    display: block; /* Mejor control sobre el bloque */
+}
+.icono-sup{
+    margin: 0;
+    position: absolute;
+    top: 2vh;
+    left: 85vw;
+
+}
+.icono-sup i{
+    color:#5fc29b;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 7px;
+    margin: 0;
+    transition: .3s ease;
+}
+.icono-sup a{
+    text-decoration: none;
+}
+#contacto{
+    bottom: 0.5vh;
+    margin: 0;
+    font-size: 13px;
+    color: #5fc29b;
+    font-family: "Bree Serif", serif;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    right: 6vw;
+    letter-spacing: 0.5vh;
+}
+
+.barra-busqueda{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden; 
+    margin: 30px 300px 0 20px;
+}
+.barra{
+    border: none;
+    padding: 2vh;
+    outline: none;
+    width: 600px;
+    border-radius: 25px 0 0 25px;
+    font-family: "Bree Serif", serif;
+}
+.boton-busqueda{
+    display: flex;
+    background-color: #5fc29b;
+    border: none;
+    color: white;
+    padding: 2.2vh 1.2vw;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    transition: background-color 0.3s;
+    
+}
+.barra-busqueda:hover{
+    background-color: #5fc29b;
+}
+.fi-rr-search{
+    font-size: 2vh;
+}
+.inicio{
+    background: transparent;
+    position: relative;
+    width: 19vw;
+    height: 2vw;
+    display:flex;
+    justify-content: flex-end;
+    top: 10px;
+    right: 127px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property: box-shadow,transform;
+}
+#inicio-sesion:hover, #inicio-sesion:focus,#inicio-sesion:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#inicio-sesion a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Bree Serif", serif;
+    font-size: 15px;
+
+}
+#inicio-sesion{
+    background-color: #5fc29b;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 3vw;
+    text-align: right;
+}
+.fi-rr-shopping-cart{
+    color: #5fc29b;
+    position: absolute;
+    right: 60vh;
+    top: 9vh;
+    font-size: 4vh;
+}
+.fi-rr-circle-user{
+    color: #ffffff;
+    position: absolute;
+    right: 19vh;
+    top: 1.4vh;
+    font-size: 4vh;
+}
+@media (max-width: 768px) {
+    .logo img {
+    width: 20vw;
+    }
+    .barra-busqueda {
+        margin: 10px; /* Ajusta el margen para pantallas pequeñas */
+        width: 90%
+    }
+    .barra {
+        width: calc(100% - 40px); /* Resta el ancho del botón */
+    }
+    .inicio {
+        right: 20px; /* Ajusta la posición en pantallas más pequeñas */
+    }
+
+    #inicio-sesion {
+        font-size: 12px; /* Ajusta el tamaño del texto en pantallas pequeñas */
+        padding: 5px 10px; /* Reduce el padding */
+    }
+}
+nav{
+    height: 6vh ;
+    width: 100%;
+    background: #7cdab2;
+    position: fixed;
+    top: 17vh;
+    z-index: 1000;
+    box-shadow: 0px 5px 10px #00000033;
+}
+.icono-perro{
+    width: 5vh;
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    margin-left: 18vh ;
+    top: 0.5vh;
+
+}
+.fi-br-angle-down{
+    width: 5vh;
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    margin-left: 33vh;
+    color: #ffffff;
+    top: 2.3vh ;
+    font-size: 10px;
+}
+.icono-gato{
+    width: 5vh;
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    margin-left: 41vh ;
+    top: 0.5vh;
+}
+.cruz{
+    width: 4vh;
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    margin-left: 63vh ;
+    top: 1vh;
+
+}
+.nav ul li a{
+    width: 5vh;
+    position: absolute;
+    display: flex;
+    margin-left: 25vh ;
+    top: 1.5vh;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+.nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: left;
+    gap: 140px;/* Espacio entre los elementos de la lista */
+}
+
