@@ -20,20 +20,136 @@ body{
     border-radius: 10px;
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
 }
-.fi-rr-arrow-small-left{
-    font-size: 5vh;
-    text-decoration: none;
-}
-a i{
-    margin-right: 5px;
-    vertical-align: middle;
-    text-decoration: none;
+.volver {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
 }
 
-a:hover{
-   text-decoration: none;
+.fi-rr-arrow-small-left {
+    color: #26916d;
+    text-decoration: none;
+    font-size: 4vh; /* Tamaño del ícono */
+    margin-right: 3px; /* Espacio entre el ícono y el texto */
 }
 
+.texto {
+    color: #26916d;
+    font-size: 2.5vh; /* Ajusta el tamaño del texto para que coincida con el ícono */
+    position: relative;
+    bottom: 1vh;
+}
+.volver a {
+    text-decoration: none;
+    position: relative; /* Necesario para posicionar el pseudoelemento */
+  }
+  
+  .volver a:hover {
+    text-decoration: underline;
+  }
+  
+  .volver a:hover::before {
+    content: "";
+    position: absolute;
+    top: 3.5vh;
+    left: 0.8vw;
+    width: 95%;
+    height: 1px; /* Ajusta esta medida según tu preferencia */
+    background-color: #26916d; /* Color del subrayado */
+  }
+.titulo{
+    position: relative;
+    top: 2vh;
+    color: #595959;
+}
+.sub-titulo{
+    position: relative;
+    top: 4vh;
+    color: #595959;
+}
+.correo{
+    position: relative;
+    top: 7vh;
+    color: #595959;
+}
+.inputt {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 10vh;
+    align-items: center;
+}
+
+.inputt i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; /* Tamaño del icono */
+    color: #888; /* Color del icono */
+}
+
+.inputt input {
+    height: 100%;
+    width: 100%;
+    padding-left: 45px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+                inset -5px -5px 10px #ffffff73;
+                font-family: "Bree Serif", serif;
+}
+
+.inputt input:focus {
+    box-shadow: inset 1px 1px 2px #BABECC,
+                inset -1px -1px 2px #ffffff73;
+}
+
+.fi-rr-envelope{
+    margin-left: 1vh;
+    margin-top: 0.5vh;
+}
+.boton{
+    position: relative;
+    top: 11vh;
+    margin: 15px 0;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    background: #7cdab2;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 2px 2px 5px #BABECC,
+            -5px -5px 10px #ffffff73;
+}
+.boton:focus {
+    color: #26916d;
+    box-shadow: inset 2px 2px 5px #BABECC,
+            inset -5px -5px 10px #ffffff73;
+}
+#logo{
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 8vh;
+    right: 95vh;
+    margin: 0;
+}
+#logom{
+    padding: 0 0 0 15vh;
+    max-width: 100%;
+    height: auto;
+    width: 50vh;
+}
 footer {
     background-color: #333;
     color: white;
@@ -56,4 +172,29 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px){
+    .content {
+        left: 50%; /* Centra el contenedor en pantallas pequeñas */
+        transform: translateX(-50%); /* Ajusta el contenedor para que esté centrado */
+        padding: 20px; /* Reduce el padding */
+        width: 85%; /* Ancho del contenedor al 90% de la pantalla */
+        top: 115px;
+        height: 65vh;
+    }
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 50px; /* Alinea el logo en pantallas pequeñas */
+        margin: 0;
+        bottom: 11vh;
+    }
+
+    #logom {
+        margin: 0;
+        width: 90vh; /* Ajusta el ancho del logo */
+    }
+
 }
