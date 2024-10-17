@@ -180,8 +180,8 @@ footer a:hover {
         transform: translateX(-50%); /* Ajusta el contenedor para que esté centrado */
         padding: 20px; /* Reduce el padding */
         width: 85%; /* Ancho del contenedor al 90% de la pantalla */
-        top: 115px;
-        height: 65vh;
+        top: 150px;
+        height: 60vh;
     }
     #logo {
         display: flex;
@@ -189,7 +189,7 @@ footer a:hover {
         align-items: center;
         right: 50px; /* Alinea el logo en pantallas pequeñas */
         margin: 0;
-        bottom: 11vh;
+        bottom: 8vh;
     }
 
     #logom {
