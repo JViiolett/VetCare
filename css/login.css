@@ -14,10 +14,9 @@ body{
     left: 60vw;
     margin: auto auto;
     padding: 40px 30px;
-    background: #dde1e7;
+    background: #ecf0f3;
     border-radius: 10px;
-    box-shadow: -3px -3px 7px #ffffff73,
-                2px 2px 5px rgba(94,104,121,0.288);
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
 }
 .content .text {
     font-size: 33px;
