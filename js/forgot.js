@@ -1,17 +1,25 @@
-const botonEnviarCodigo = document.querySelector('.boton'); // Button in content1
-const botonVerificarCodigo = document.querySelector('.boton.content2'); // Button in content2 (ensure this selector is correct)
+const botonEnviarCodigo = document.getElementById('enviar'); // Botón en content1
+const botonVerificarCodigo = document.getElementById('verifica'); // Botón en content2
+const botonCambiarContraseña = document.getElementById('cambiar'); // Botón en content3
 
 const contenido1 = document.querySelector('.content');
 const contenido2 = document.querySelector('.content2');
 const contenido3 = document.querySelector('.content3');
 
 botonEnviarCodigo.addEventListener('click', () => {
-  contenido1.style.display = 'none';
-  contenido2.style.display = 'block';
+  // Puedes agregar validación de correo electrónico aquí (opcional)
+  contenido1.classList.add('inactivo');
+  contenido2.classList.remove('inactivo');
 });
 
 botonVerificarCodigo.addEventListener('click', () => {
-  contenido2.style.display = 'none';
-  contenido3.style.display = 'block';
-  console.log('Se ha mostrado el contenido 3'); // Add this line for verification
+  // Puedes agregar validación de código de verificación aquí (opcional)
+  contenido2.classList.add('inactivo');
+  contenido3.classList.remove('inactivo');
+});
+
+botonCambiarContraseña.addEventListener('click', () => {
+  // Puedes agregar lógica para cambiar la contraseña aquí (opcional)
+  // Por ejemplo, enviar una solicitud al servidor para actualizar la contraseña
+  alert('¡Contraseña cambiada con éxito!');
 });
