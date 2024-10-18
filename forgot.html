@@ -6,13 +6,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel="stylesheet" href="css/forgot.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <script src="js/forgot.js" defer></script>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- Link iconos-->
+    <link rel="stylesheet" href="css/forgot.css"> <!-- Vincular css al html-->
+    <script src="js/forgot.js" defer></script> <!--Vincular archivo js-->
     <title>¿Olvidaste tu contraseña</title>
 </head>
 <body>
@@ -21,7 +17,7 @@
     </header>
     <form action="#" class="form">
         <!-- Pagina 1 -->
-        <div class="content"> 
+        <section class="content">
             <div class="volver">
                 <a href="login.html" style="text-decoration: none;">
                     <i class="fi fi-rr-arrow-small-left"></i>
@@ -32,17 +28,17 @@
                 <h2>Recupera tu contraseña</h2>
             </div>
             <div class="sub-titulo">
-                <p>Ingresa el correo que tienes resgistrado, para enviarte un codigo de confirmacion</p>
+                <p>Ingresa el correo que tienes resgistrado para enviarte un codigo de confirmacion</p>
             </div>
             <label class="correo" data-invalid>Correo electrónico</label>
             <div class="inputt">
                 <input type="email" placeholder="ejemplo@gmail.com" >
                 <i class="fi fi-rr-envelope"></i>
             </div>
-                <button class="boton">Enviar código</button>
-        </div>
+                <button class="boton" id="enviar">Enviar código</button>
+        </section>
         <!-- Pagina 2  -->
-        <div class="content2">
+        <section class="content2 inactivo">
             <div class="volver">
                 <a href="login.html" style="text-decoration: none;">
                     <i class="fi fi-rr-arrow-small-left"></i>
@@ -57,10 +53,10 @@
                 <input type="email" placeholder="__ __ __ __ __" >
                 <i class="fi fi-rr-envelope"></i>
             </div>
-                <button class="botonb">Verficar codigo</button>
-        </div>
+                <button class="botonb" id="verifica">Verficar codigo</button>
+        </section>
         <!-- Pagina 3 -->
-        <div class="content3">
+        <section class="content3 inactivo">
             <div class="volver">
                 <a href="login.html" style="text-decoration: none;">
                     <i class="fi fi-rr-arrow-small-left"></i>
@@ -80,14 +76,14 @@
                     <input type="password">
                 </div>
             </div>
-                <button class="botonc">Cambiar Contraseña</button>
-        </div>
+                <button class="botonc" id="cambiar">Cambiar Contraseña</button>
+        </section>
     </form>
     <footer>
         <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
         <p>
-            <a href="#">Política de Privacidad</a> | 
-            <a href="#">Términos y Condiciones</a> | 
+            <a href="#">Política de Privacidad</a> |
+            <a href="#">Términos y Condiciones</a> |
             <a href="#">Contacto</a>
         </p>
     </footer>
