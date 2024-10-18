@@ -10,15 +10,16 @@ body{
     align-items: center;
     font-family: "Bree Serif", serif;
 }
-.content2, .content3 {
+.inactivo{
     display: none;
 }
 .content {
+    z-index: 20;
     position: absolute;
-    top: 10vh;
+    top: 18vh;
     right: 35vw;
-    width: 30vw;
-    height: 70vh;
+    width: 25vw;
+    height: 49vh;
     margin: auto auto;
     padding: 40px 30px;
     background: #ecf0f3;
@@ -46,13 +47,13 @@ body{
 .volver a {
     text-decoration: none;
     position: relative; /* Necesario para posicionar el pseudoelemento */
-  }
-  
-  .volver a:hover {
+}
+
+.volver a:hover {
     text-decoration: underline;
-  }
-  
-  .volver a:hover::before {
+}
+
+.volver a:hover::before {
     content: "";
     position: absolute;
     top: 3.5vh;
@@ -60,28 +61,31 @@ body{
     width: 95%;
     height: 1px; /* Ajusta esta medida según tu preferencia */
     background-color: #26916d; /* Color del subrayado */
-  }
+}
 .titulo{
     position: relative;
-    top: 2vh;
     color: #595959;
+    left: 0.5vw;
 }
 .sub-titulo{
+    top: 2vh;
     position: relative;
-    top: 4vh;
     color: #595959;
+    left: 0.5vw;
+    margin-right: 1vw;
 }
 .correo{
     position: relative;
-    top: 7vh;
     color: #595959;
+    left: 1vh;
+    top: 4vh;
 }
 .inputt {
+    top: 7vh;
     height: 50px;
     width: 100%;
     display: flex;
     position: relative;
-    top: 10vh;
     align-items: center;
 }
 
@@ -120,7 +124,7 @@ body{
 }
 .boton{
     position: relative;
-    top: 11vh;
+    top: 8vh;
     margin: 15px 0;
     width: 100%;
     height: 50px;
@@ -183,11 +187,12 @@ footer a:hover {
 /* Pagina 2 */
 
 .content2 {
+    z-index: 40;
     position: absolute;
-    top: 10vh;
+    top: 18vh;
     right: 35vw;
-    width: 30vw;
-    height: 70vh;
+    width: 25vw;
+    height: 49vh;
     margin: auto auto;
     padding: 40px 30px;
     background: #ecf0f3;
@@ -217,14 +222,16 @@ footer a:hover {
     box-shadow: inset 2px 2px 5px #BABECC,
             inset -5px -5px 10px #ffffff73;
 }
+
 /* Pagina 3 */
 
 .content3 {
+    z-index: 60;
     position: absolute;
-    top: 10vh;
+    top: 18vh;
     right: 35vw;
-    width: 30vw;
-    height: 70vh;
+    width: 25vw;
+    height: 49vh;
     margin: auto auto;
     padding: 40px 30px;
     background: #ecf0f3;
@@ -233,14 +240,14 @@ footer a:hover {
 }
 
 .inputt3{
-    display: flex;
-    flex-direction: column;
-    gap: 9vh;
+    top: 7vh;
     height: 50px;
     width: 100%;
     display: flex;
     position: relative;
     align-items: center;
+    flex-direction: column;
+    gap: 5vh;
 }
 
 .input-field{
@@ -249,7 +256,7 @@ footer a:hover {
 }
 
 .input-field input {
-    height: 4vw;
+    height: 2.5vw;
     width: 55vh;
     padding-left: 2vw;
     outline: none;
@@ -299,4 +306,16 @@ footer a:hover {
     position: relative;
     top: 20vh;
     color: #595959;
+}
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .content, .content2, .content3 {
+        left: 5vw;
+        width: 50vh;
+        top: 15vh; /* Ajusta la posición vertical según tus necesidades */
+    }
+
+    .input-field input {
+        height: 3vw; /* Ajusta la altura según tus necesidades */
+    }
 }
