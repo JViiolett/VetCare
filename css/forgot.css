@@ -310,9 +310,9 @@ footer a:hover {
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .content{
-        left: 5vw;
+        left: 5%;
         height: 58vh;
-        width: 50vh;
+        width: 90%;
         top: 22vh; /* Ajusta la posición vertical según tus necesidades */
     }
 
@@ -331,13 +331,13 @@ footer a:hover {
     }
     .content2{
         left: 5vw;
-        width: 50vh;
+        width: 90%;
         height: 55vh;
         top: 22vh; /* Ajusta la posición vertical según tus necesidades */
     }
     .content3{
         left: 5vw;
-        width: 50vh;
+        width: 90%;
         height: 60vh;
         top: 22vh; /* Ajusta la posición vertical según tus necesidades */
     }
