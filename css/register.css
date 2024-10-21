@@ -8,116 +8,102 @@ body {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    background-color: #f4f4f4; /* Fondo opcional para mejorar la visibilidad */
-    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
-    padding: 20px; /* Espacio alrededor del contenido */
+    background-color: #f4f4f4; /* Fondo opcional */
+    height: 100vh; /* Altura completa de la vista */
 }
-.inactivo {
-    display: none;
-}
-.text-prin {
-    font-size: 30px;
-    font-weight: 600;
-    color: #595959;
-    text-align: center;
-    grid-column: span 2; /* Ocupa ambas columnas en la grid */
+form {
+    width: 100%; /* Ancho del formulario */
 }
 .pag1 {
     width: 70%;
-    max-width: 800px;
-    padding: 40px 30px;
+    margin-left: 35vh;
+    height: 35vw;
+    margin-bottom: 10vh;
     background: #ecf0f3;
     border-radius: 10px;
+    padding: 40px 30px;
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+}
+.text-prin{
+    text-align: center;
+    color: #595959;
+}
+.inactivo {
+    display: none; /* Oculta la sección */
+}
+.inputs-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas */
-    gap: 20px; /* Espacio entre los inputs */
-    margin: auto;
+    grid-template-columns: repeat(3, 1fr); /* Dos columnas */
+    gap: 35px; /* Espacio entre inputs */
+    margin-top: 3vh;
 }
-.tipo-doc {
-    grid-column: 1 / 2; /* Coloca este div en la primera columna */
+.tipo-doc label, .num-doc label, .nom label, .ap1 label, .ap2 label, .tel label {
+    color: #595959;
+    text-align: center;
 }
-label {
-    margin-bottom: 5px;
-    font-weight: 500; /* Aumentar la legibilidad */
+.tipo-doc input, .num-doc input, .nom input, .ap1 input, .ap2 input, .tel input, .tipo-doc select{
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+                inset -5px -5px 10px #ffffff73;
+                font-family: "Bree Serif", serif;
 }
-input, select {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    padding: 10px; /* Espaciado interno para mejor apariencia */
-    margin-bottom: 20px; /* Espacio entre las filas */
-    border: 1px solid #ccc; /* Borde para los inputs */
-    border-radius: 5px; /* Esquinas redondeadas */
+.direccion {
+    margin-top: 30px; /* Espacio arriba */
+    font-family: "Bree Serif", serif;
 }
-
-input[type="email"],
-input[type="password"] {
-    margin-bottom: 20px; /* Espacio adicional entre campos */
+.direccion input{
+    width: 25%;
+    height: 3.5vw;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+                inset -5px -5px 10px #ffffff73;
+                font-family: "Bree Serif", serif;
 }
-
-.boton1, .boton2, .botonc {
-    grid-column: span 2; /* Ocupa ambas columnas */
-    padding: 10px;
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave */
+button {
+    width: 50%; /* Botón ocupa el 100% del ancho */
+    height: 50px; /* Altura del botón */
+    margin-top: 100px; /* Espacio arriba del botón */
+    margin-left: 36vh;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    background: #7cdab2;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #ffffff73;
 }
-
-.boton1:hover, .boton2:hover, .botonc:hover {
-    background-color: #0056b3; /* Color al pasar el mouse */
-}
-
-.pag2 {
-    display: none; /* O usa .inactivo para controlarlo desde JavaScript */
-}
-
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 2vh 0;
     font-size: 0.8rem;
-    min-height: 10vh;
-    width: 100%;
-    opacity: 50%;
-    flex-shrink: 0;
     position: fixed;
     bottom: 0;
+    width: 100%;
+    opacity: 50%;
 }
-
 footer a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
 }
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 2vh 0;
-    font-size: 0.8rem;
-    min-height: 10vh;
-    width: 100%;
-    opacity: 50%;
-    flex-shrink: 0;
-    position: fixed;
-    bottom: 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
 footer a:hover {
     text-decoration: underline;
 }
