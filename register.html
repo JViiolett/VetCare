@@ -11,72 +11,69 @@
     <title>Formulario de registro</title>
 </head>
 <body>
-    <form>
-        <section class="pag1">
-            <h2 class="text-prin">Registrarse</h2>
-            <div class="inputs-container">
-                <div class="tipo-doc">
-                    <label for="doc">Tipo de Identificación</label><br>
-                    <select name="" id="">
-                        <option value="" selected disabled>Seleccione</option>
-                        <option value="">Tarjeta de identidad</option>
-                        <option value="">Cédula de Ciudadanía</option>
-                        <option value="">Cédula de extranjería</option>
-                    </select>
-                </div> 
-                <div class="num-doc">
-                    <label for="nume-documento">Número de Identificación</label><br>
-                    <input type="text" id="num-documen" name="num-doc" placeholder="Ej: 1564131321657">
+    <div class="container-form">
+        <div class="imagen">
+            <img src="img/post/post-register.png" alt="">
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="title">
+                    <h2>Registrarse</h2>
                 </div>
-                <div class="nom">
-                    <label for="nombre">Nombres</label><br>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombres">
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="tipo-doc">Tipo de documento</label>
+                        <select name="" class="tip-doc">
+                            <option value="" selected disabled>Seleccione</option>
+                            <option value="">Tarjeta de identidad</option>
+                            <option value="">Cédula de Ciudadanía</option>
+                            <option value="">Cédula de extranjería</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Numero de documento</label>
+                        <input type="text" id="num-doc" placeholder="Numero de documento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="firstname">Nombre completo</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Nombres" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Apellidos</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Apellidos" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Numero Celular</label>
+                        <input type="text" id="phone-number" placeholder="Numero Celular" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Dirreción</label>
+                        <input type="text" id="direc" placeholder="Direccion" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Barrio</label>
+                        <input type="text" id="barrio" placeholder="Barrio" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Correo Electronico</label>
+                        <input type="email" id="email" placeholder="Correo Electronico" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Contraseña</label>
+                        <input type="password" id="password" placeholder="Digite su contraseña" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Confirmar Contraseña</label>
+                        <input type="password" id="confi-pass" placeholder="Confirme su contraseña" required>
+                    </div>  
                 </div>
-                <div class="ap1">
-                    <label for="apel">Primer Apellido</label><br>
-                    <input type="text" id="apellido1" name="apellido1" placeholder="Primer Apellido">
+                <div class="register-boton">
+                    <button><a href="#">Registrarse</a></button>
                 </div>
-                <div class="ap2">
-                    <label for="apel2">Segundo Apellido</label><br>
-                    <input type="text" id="apellido2" name="apellido2" placeholder="Segundo Apellido">
-                </div>
-                <div class="tel">
-                    <label for="telf">Número Celular</label><br>
-                    <input type="text" id="num-tel" class="nume-tel" placeholder="Teléfono" name="telefono">
-                </div>
-            </div><br>
-            <div class="direccion">
-                <label for="calle" id="calle">Calle:</label>
-                <input type="text" class="calle" name="calle">
-                
-                <label for="numero" id="numero">Nro:</label>
-                <input type="text" class="numero" name="numero">
-                
-                <label for="barrio" id="barrio">Barrio:</label>
-                <input type="text" class="barrio" name="barrio">
-            </div>
-            <button type="button" class="boton1" id="bon1">Siguiente</button>
-        </section>
-        <section class="pag2 inactivo">
-            <div class="titulo">
-                <h2>Registrarse</h2>
-            </div>
-            <div class="inputt3">
-                <label class="ingresa-contra" data-invalid>Correo electrónico</label><br>
-                <input required="" type="email">
-            </div>
-            <div class="input-field">
-                <label class="confi-contra" data-invalid>Contraseña</label><br>
-                <input required="" type="password">   
-            </div>
-            <div class="input-field">
-                <label class="confi-contra" data-invalid>Confirmar contraseña</label><br>
-                <input required="" type="confi-password">   
-            </div>
-            <button type="button" class="boton2" id="bon2">Anterior</button><br>
-            <button class="botonc" id="registrarse">Registrarse</button>
-        </section>
-    </form>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
         <p>
@@ -85,16 +82,5 @@
             <a href="#">Contacto</a>
         </p>
     </footer>
-    <script>
-        // Script para activar y desactivar las secciones
-        document.getElementById('bon1').addEventListener('click', function() {
-            document.querySelector('.pag1').classList.add('inactivo');
-            document.querySelector('.pag2').classList.remove('inactivo');
-        });
-        document.getElementById('bon2').addEventListener('click', function() {
-            document.querySelector('.pag2').classList.add('inactivo');
-            document.querySelector('.pag1').classList.remove('inactivo');
-        });
-    </script>
 </body>
 </html>
