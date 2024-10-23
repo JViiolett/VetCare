@@ -307,6 +307,7 @@ footer a:hover {
     top: 15vh;
     color: #595959;
 }
+
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .content{

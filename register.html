@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <script src="js/register.js" defer></script>
+    <script src="js/register.js"></script>
     <link rel="stylesheet" href="css/register.css">
     <title>Formulario de registro</title>
 </head>
@@ -15,12 +15,16 @@
         <div class="imagen">
             <img src="img/post/post-register.png" alt="">
         </div>
+        <div class="logo">
+            <button id="logom"><a href="index.html"><img src="img/logos/vetcare.png" alt="" id="logo"></a></button>
+        </div>
         <div class="form">
             <form action="#">
                 <div class="title">
                     <h2>Registrarse</h2>
                 </div>
                 <div class="input-group">
+                    <!-- Primera página -->
                     <div class="input-box">
                         <label for="tipo-doc">Tipo de documento</label>
                         <select name="" class="tip-doc">
@@ -35,7 +39,7 @@
                         <input type="text" id="num-doc" placeholder="Numero de documento" required>
                     </div>
                     <div class="input-box">
-                        <label for="firstname">Nombre completo</label>
+                        <label for="">Nombre completo</label>
                         <input type="text" id="firstname" name="firstname" placeholder="Nombres" required>
                     </div>
                     <div class="input-box">
@@ -47,33 +51,40 @@
                         <input type="text" id="phone-number" placeholder="Numero Celular" required>
                     </div>
                     <div class="input-box">
-                        <label for="">Dirreción</label>
-                        <input type="text" id="direc" placeholder="Direccion" required>
+                        <label for="">Ciudad</label>
+                        <input type="text" id="ciudad" placeholder="Ciudad" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="">Dirección</label>
+                        <input type="text" id="direc" placeholder="Dirección" required>
                     </div>
                     <div class="input-box">
                         <label for="">Barrio</label>
                         <input type="text" id="barrio" placeholder="Barrio" required>
                     </div>
-                    <div class="input-box">
-                        <label for="">Correo Electronico</label>
-                        <input type="email" id="email" placeholder="Correo Electronico" required>
+                    <!-- Botón para ir a la segunda página -->
+                        <button type="button" class="next-button" id="next-button">Siguiente</button>
+                </div>
+            </div>
+                <!-- Segunda página (inactiva inicialmente) -->
+                <div class="pag2 inactivo">
+                    <div class="input-box2">
+                        <label for="">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="Correo Electrónico" required>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box2">
                         <label for="">Contraseña</label>
                         <input type="password" id="password" placeholder="Digite su contraseña" required>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box2">
                         <label for="">Confirmar Contraseña</label>
                         <input type="password" id="confi-pass" placeholder="Confirme su contraseña" required>
-                    </div>  
-                </div>
-                <div class="register-boton">
-                    <button><a href="#">Registrarse</a></button>
+                    </div>
+                        <button type="button" class="buton-register">Registrarse</button>
                 </div>
             </form>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
         <p>

@@ -11,33 +11,54 @@ body{
     align-items: center;
 }
 .container-form{
-    width: 90%;
+    position: absolute;
+    width: 80%;
     height: 80vh;
+    bottom: 15vh;
     display: flex;
+    background: #ecf0f3;
     border-radius: 10px;
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
 }
 .imagen{
     width: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
 }
 .imagen img{
     width: 29.3rem;
+    border-radius: 10px;
+    max-width: 29.3rem;
+}
+#logo{
+    max-width: 50%;
+    height: auto;
+    width: 70vh;
+}
+#logom{
+    justify-content: center;
+    background: none;
+    border: none;
+    position: absolute; 
+    right: 35vw;
+    z-index: 1; 
 }
 .form{
-    width: 50%;
+    width: 100%;
+    height: 100%;
+    margin-left: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 3rem;
+    padding: 1rem;
 }
 .title{
-    margin-bottom: 3rem;
+    position: absolute;
     display: flex;
     justify-content: space-between;
+    top: 4vh;
+
 }
 .title h2::after{
     content: '';
@@ -51,16 +72,16 @@ body{
 }
 .input-group, .tip-doc{
     display: flex;
+    width: 100%;
+    margin-top: 10vh;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 0;
 }
 .input-box,.tip-doc{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
 }
-.input-box input, .tip-doc{
+.input-box input, .tip-doc, .input-box2 input{
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
@@ -68,24 +89,61 @@ body{
     box-shadow: inset 2px 2px 5px #BABECC,
                 inset -5px -5px 10px #ffffff73;
 }
-.input-box input:focus {
+.input-box input:focus, .input-box2 input:focus {
     box-shadow: inset 1px 1px 2px #BABECC,
                 inset -1px -1px 2px #ffffff73;
 }
-.input-box label,
+.input-box label, .input-box2 label,
 .tip-doc{
     font-size: 0.75rem;
     font-weight: 600;
     color: #595959;
-}
-.input-box input::placeholder{
     font-family: "Bree Serif", serif;
 }
-.register-boton {
+.input-box input::placeholder, .input-box2 input::placeholder{
+    font-family: "Bree Serif", serif;
+}
+.input-box input:focus, .input-box2 input:focus{
+    box-shadow: inset 1px 1px 2px #BABECC,
+                inset -1px -1px 2px #ffffff73;
+}
+.next-button {
     position: relative;
-    top: 1.5vh;
     margin: 15px 0;
-    width: 100%;
+    width: 45%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    margin-left: 20vh;
+    background: #7cdab2;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 2px 2px 5px #BABECC,
+            -5px -5px 10px #ffffff73;
+}
+.next-button:focus {
+    color: #26916d;
+    box-shadow: inset 2px 2px 5px #BABECC,
+            inset -5px -5px 10px #ffffff73;
+}
+
+/*Pagina 2 */
+.inactivo{
+    display: none;
+}
+.pag2 {
+    z-index: 40;
+    margin-right: 20vw;
+    margin-top: 15vh;
+}
+.buton-register {
+    position: relative;
+    margin: 15px 0;
+    width: 75%;
     height: 50px;
     font-size: 18px;
     line-height: 50px;
@@ -99,7 +157,7 @@ body{
     box-shadow: 2px 2px 5px #BABECC,
             -5px -5px 10px #ffffff73;
 }
-.register-boton:focus {
+.buton-register:focus {
     color: #26916d;
     box-shadow: inset 2px 2px 5px #BABECC,
             inset -5px -5px 10px #ffffff73;
@@ -123,4 +181,70 @@ footer a {
 }
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Estilos generales para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container-form {
+        width: 90%; /* Ancho más pequeño */
+        height: 60%;
+        flex-direction: column; /* Cambiar a columna */
+        overflow-y: scroll;
+    }
+
+    .imagen {
+        display: none;
+    }
+    #logo {
+        margin: 0;
+        width: 90vh; /* Ajusta el ancho del logo */
+    }
+
+    #logom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 55px; /* Alinea el logo en pantallas pequeñas */
+        margin: 0;
+    }
+    .form {
+        padding: 2rem; /* Menos padding */
+        margin-top: 30vh;
+    }
+
+    .input-group {
+        flex-direction: column; /* Cambiar a columna en dispositivos más pequeños */
+    }
+
+    #next-button, #ante-button {
+        width: 90%; /* Botones ocupan el 90% del contenedor */
+        margin: 0 auto; /* Centrar los botones */
+        margin-bottom: 10px; /* Espacio inferior */
+    }
+
+    .butons {
+        flex-direction: column; /* Alinear botones en columna */
+        align-items: center; /* Centrar los botones */
+        width: 100%; /* Asegurarse de que ocupen el 100% */
+    }
+
+    .butons button {
+        margin-right: 0; /* Eliminar margen derecho en botones */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+}
+
+/* Estilos para dispositivos muy pequeños, como móviles */
+@media (max-width: 480px) {
+    .title h2 {
+        font-size: 1.5rem; /* Ajustar tamaño de texto */
+    }
+
+    .input-box input, .tip-doc {
+        padding: 0.6rem 0.8rem; /* Reducir padding en campos de entrada */
+    }
+
+    footer {
+        font-size: 0.7rem; /* Reducir tamaño de fuente del pie de página */
+    }
 }
