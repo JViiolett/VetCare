@@ -15,6 +15,7 @@ body{
     width: 80%;
     height: 80vh;
     bottom: 15vh;
+    max-width: 1200px;
     display: flex;
     background: #ecf0f3;
     border-radius: 10px;
@@ -39,9 +40,9 @@ body{
     justify-content: center;
     background: none;
     border: none;
-    position: absolute; 
+    position: absolute;
     right: 35vw;
-    z-index: 1; 
+    z-index: 1;
 }
 .form{
     width: 100%;
@@ -190,6 +191,7 @@ footer a:hover {
         height: 60%;
         flex-direction: column; /* Cambiar a columna */
         overflow-y: scroll;
+        margin-right: 2vw;
     }
 
     .imagen {
@@ -237,14 +239,39 @@ footer a:hover {
 /* Estilos para dispositivos muy pequeños, como móviles */
 @media (max-width: 480px) {
     .title h2 {
-        font-size: 1.5rem; /* Ajustar tamaño de texto */
+        font-size: 1.5rem; 
     }
 
     .input-box input, .tip-doc {
-        padding: 0.6rem 0.8rem; /* Reducir padding en campos de entrada */
+        padding: 0.6rem 0.8rem;
     }
 
     footer {
-        font-size: 0.7rem; /* Reducir tamaño de fuente del pie de página */
+        font-size: 0.7rem; 
+    }
+}
+/*Estilos pantallas grandes */
+@media (min-width: 1920px){
+    .container-form{
+        width: 55%;
+        height: 60%;
+        bottom: 25vh;
+    }
+    .form{
+        font-size: 20px;
+    }
+    #logo{
+        margin-left: 15vw;
+    }
+    .input-group{
+        justify-content: space-between;
+        
+    }
+    #next-button{
+        right: 3vw;
+    }
+    #logom{
+        width: 50%;
+        left: 0.1vw;
     }
 }
