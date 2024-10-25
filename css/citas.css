@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(25, 0, 255);
+    width: 100%;
+    height: 100vh;
+}
+.barra-lateral{
+    border: 2px solid green;
+    width: 5vw;
+    height: 100%;
+    padding: 20px 5px;
+    background-color: #ffffff;
+    transition: width 0.5s;
+    overflow: hidden;
+}
+.barra-lateral:hover{
+    width: 15vw;
+}
+.barra-lateral .nome{
+    border: 2px solid red;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+.barra-lateral #logom{
+    border: 2px solid purple;
+    width: 10vh;
+}
+.barra-lateral .nome span{
+    border: 2px solid black;
+    font-size: 20px;
+    margin-left: 0.5vw;
+    margin-top: 2.5vh;
+    font-family: "Montserrat", sans-serif;
+    color: #595959 ; 
+    font-weight: 600;
+}
+.barra-lateral .nome span.oculto{
+    opacity: 0;
+}
+/* Estilos span barra*/
+.barra-lateral span{
+    border: 2px solid black;
+    font-size: 16px;
+    margin-left: 0.5vw;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff ; 
+    font-family: "Bree Serif", serif;
+}
+.barra-lateral .nome span.oculto{
+    opacity: 0;
+}
+ /*Boton */
+.barra-lateral .boton{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #7cdab2 ;
+    color: #ffffff;
+}
+.barra-lateral .bi-plus-lg{
+    border: 2px solid red;
+    min-width: 50px;
+    font-size: 25px;
+}
