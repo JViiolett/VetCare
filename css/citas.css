@@ -2,37 +2,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
 body{
-    background-color: rgb(25, 0, 255);
+    background-color: #edecf3;
     width: 100%;
     height: 100vh;
 }
 .barra-lateral{
-    border: 2px solid green;
     width: 5vw;
     height: 100%;
     padding: 20px 5px;
     background-color: #ffffff;
     transition: width 0.5s;
     overflow: hidden;
+    border-radius: 0px;
+    box-shadow:  5px -5px 18px #ebebeb,
+             -5px 5px 18px #ffffff;
 }
 .barra-lateral:hover{
     width: 15vw;
 }
 .barra-lateral .nome{
-    border: 2px solid red;
     width: 100%;
     height: 65px;
     display: flex;
     align-items: center;
 }
 .barra-lateral #logom{
-    border: 2px solid purple;
     width: 10vh;
 }
 .barra-lateral .nome span{
-    border: 2px solid black;
     font-size: 20px;
     margin-left: 0.5vw;
     margin-top: 2.5vh;
@@ -43,19 +42,16 @@ body{
 .barra-lateral .nome span.oculto{
     opacity: 0;
 }
-/* Estilos span barra*/
-.barra-lateral span{
-    border: 2px solid black;
+
+/* Estilos span barra Boton */
+.barra-lateral .boton span{
     font-size: 16px;
-    margin-left: 0.5vw;
-    font-family: "Montserrat", sans-serif;
     color: #ffffff ; 
     font-family: "Bree Serif", serif;
 }
 .barra-lateral .nome span.oculto{
     opacity: 0;
 }
- /*Boton */
 .barra-lateral .boton{
     width: 100%;
     height: 45px;
@@ -66,9 +62,123 @@ body{
     border-radius: 10px;
     background-color: #7cdab2 ;
     color: #ffffff;
+    margin-top: 3vh;
+    transition: all 0.3s ease; /* Transición suave para efectos */
 }
+.boton:hover {
+    background-color: #26916d; /* Cambia el color de fondo al pasar el ratón */
+}
+
+
+/*Icono Agendar cita */
 .barra-lateral .bi-plus-lg{
-    border: 2px solid red;
     min-width: 50px;
-    font-size: 25px;
+    font-size: 30px;
 }
+/* Ocultar el texto cuando la barra está contraída */
+.barra-lateral:hover .boton span {
+    opacity: 1;
+}
+
+.barra-lateral .boton span {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+ /*Iconos*/
+ .icon {
+    list-style: none;
+    padding: 0;
+    margin-top: 3vh;                                      
+}
+.icon li {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.icon li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #595959;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+.icon li a i {
+    font-size: 25px;
+    color: #595959; /* Color del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+/* Ocultar el texto de los enlaces en estado contraído */
+.icon li a span {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Bree Serif", serif;
+    transition: opacity 0.3s, width 0.3s;
+}
+
+/* Mostrar el texto al expandir la barra lateral */
+.barra-lateral:hover .icon li a span {
+    opacity: 1;
+    width: auto;
+    margin-left: 10px;
+}
+.icon i,
+.icon-infe i{
+    margin-left: 1vw;
+}
+/*Icon-inferior */
+.icon-infe{
+    list-style: none;
+    padding: 0;
+    margin-top: 5vh;
+}
+.icon-infe li {
+    padding: 10px 0;
+    width: 100%;
+}
+.icon-infe li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #595959;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+.icon-infe li a i {
+    font-size: 25px;
+    color: #595959; /* Color del icono */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+.icon-infe li a span {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Bree Serif", serif;
+    transition: opacity 0.3s, width 0.3s;
+}
+.barra-lateral:hover .icon-infe li a span {
+    opacity: 1;
+    width: auto;
+    margin-left: 10px;
+}
+/* Estilo del separador */
+.separator {
+    width: 100%;
+    height: 1px;
+    margin-top: 40vh;
+    background-color: #ddd; /* Color de la línea */
+}
+.icon li a:hover, .icon-infe li a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #26916d; /* Cambia el color del texto al pasar el mouse */
+    height: 7vh ;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/*--------------------------------------------------- CSS AGENDAR CITAS-----------------------------------------*/
