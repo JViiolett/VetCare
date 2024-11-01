@@ -1,40 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const days = document.querySelectorAll('.day');
-    const timeSlots = document.getElementById('time-slots');
-    const availableTimes = document.getElementById('available-times');
+    const monthSelector = document.querySelector('.month-name');
+    const dateCalendar = document.querySelector('.date-calendar');
+    const prevBtn = document.querySelector('.arrow:first-of-type');
+    const nextBtn = document.querySelector('.arrow:last-of-type');
 
-    const hoursAvailable = {
-        // Días de ejemplo con horas disponibles
-        '1': ['09:00 AM', '10:00 AM', '11:00 AM', '02:00 PM'],
-        '2': ['09:00 AM', '11:00 AM', '01:00 PM', '04:00 PM'],
-        '3': ['08:30 AM', '10:30 AM', '12:00 PM', '03:00 PM'],
-    };
+    const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    let currentDate = new Date();
 
-    days.forEach(day => {
-        day.addEventListener('click', () => {
-            // Seleccionar día
-            days.forEach(d => d.classList.remove('selected'));
-            day.classList.add('selected');
+    function updateCalendar(date) {
+        monthSelector.textContent = `${months[date.getMonth()]} ${date.getFullYear()}`;
 
-            // Mostrar las horas disponibles
-            const selectedDay = day.textContent;
-            const hours = hoursAvailable[selectedDay] || [];
-            timeSlots.innerHTML = ''; // Limpiar horas anteriores
+        const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+        const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+        const daysInPrevMonth = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
 
-            if (hours.length > 0) {
-                hours.forEach(hour => {
-                    const timeButton = document.createElement('button');
-                    timeButton.classList.add('time-slot');
-                    timeButton.textContent = hour;
-                    timeButton.addEventListener('click', () => {
-                        alert(`Cita seleccionada el día ${selectedDay} a las ${hour}`);
-                    });
-                    timeSlots.appendChild(timeButton);
-                });
-                availableTimes.style.display = 'block';
-            } else {
-                timeSlots.innerHTML = '<p>No hay horas disponibles para este día.</p>';
+        dateCalendar.innerHTML = '';
+
+        // Días del mes anterior
+        for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+            const day = document.createElement('button');
+            day.classList.add('date', 'faded');
+            day.textContent = daysInPrevMonth - i;
+            dateCalendar.appendChild(day);
+        }
+
+        // Días del mes actual
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayBtn = document.createElement('button');
+            dayBtn.classList.add('date');
+            dayBtn.textContent = day;
+
+            if (day === currentDate.getDate() &&
+                date.getMonth() === currentDate.getMonth() &&
+                date.getFullYear() === currentDate.getFullYear()) {
+                dayBtn.classList.add('current-day');
             }
-        });
+
+            dayBtn.addEventListener('click', () => {
+                alert(`Has seleccionado el día ${day} de ${months[date.getMonth()]} ${date.getFullYear()}`);
+            });
+
+            dateCalendar.appendChild(dayBtn);
+        }
+
+        // Días del mes siguiente para completar la semana
+        const totalButtons = dateCalendar.childElementCount;
+        for (let i = 1; i <= (42 - totalButtons); i++) {
+            const day = document.createElement('button');
+            day.classList.add('date', 'faded');
+            day.textContent = i;
+            dateCalendar.appendChild(day);
+        }
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        updateCalendar(currentDate);
     });
+
+    nextBtn.addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        updateCalendar(currentDate);
+    });
+
+    updateCalendar(currentDate);
 });

@@ -21,6 +21,9 @@
     <title>Citas Medicas</title>
 </head>
 <body>
+    <nav>
+        <div class="barra"></div>
+    </nav>
     <!--BARRA LATERAL-->
     <div class="barra-lateral">
         <div class="nome">
@@ -41,29 +44,47 @@
             <li><a href="#"><i class="bi bi-box-arrow-right"></i><span>Cerrar Sesion</span></a></li>
         </ul>
     </div> <!-- Cierre Div barra lateral-->
+    
+    <!-------------------------------------------------- Section Especialidad ------------------------- -->
+     <div class="container-select">
+        <select class="form-select">
+            <option selected disabled>Especialidad</option>
+            <option class="options" value="1">One</option>
+            <option class="options" value="2">Two</option>
+            <option class="options" value="3">Three</option>
+        </select>
+        <select class="vet-form">
+            <option selected disabled>Veterinario</option>
+            <option class="options" value="1">One</option>
+            <option class="options" value="2">Two</option>
+            <option class="options" value="3">Three</option>
+        </select>
+        <select class="time-select">
+            <option selected disabled>Hora</option>
+            <option class="options" value="1">One</option>
+            <option class="options" value="2">Two</option>
+            <option class="options" value="3">Three</option>
+        </select>
+     </div>
 
+
+     <!-- ----------------------------------------------------- CALENDARIO ------------------------------------->
     <div class="datepicker">
         <div class="datepicker-top">
-            <div class="btn-group">
-                <button class="tag">Today</button>
-                <button class="tag">Tomorrow</button>
-                <button class="tag">In 2 days</button>
-            </div>
             <div class="month-selector">
-                <button class="arrow"><i class="material-icons">chevron_left</i></button>
+                <button class="arrow"><i class="bi bi-chevron-left"></i></button>
                 <span class="month-name">December 2020</span>
-                <button class="arrow"><i class="material-icons">chevron_right</i></button>
+                <button class="arrow"><i class="bi bi-chevron-right"></i></button>
             </div>
         </div>
-        <!-- CALENDARIO-->
         <div class="datepicker-calendar">
-            <span class="day">Mo</span>
-            <span class="day">Tu</span>
-            <span class="day">We</span>
-            <span class="day">Th</span>
-            <span class="day">Fr</span>
+            <span class="day">Lu</span>
+            <span class="day">Ma</span>
+            <span class="day">Mi</span>
+            <span class="day">Ju</span>
+            <span class="day">Vi</span>
             <span class="day">Sa</span>
-            <span class="day">Su</span>
+            <span class="day">Do</span>
             <button class="date faded">30</button>
             <button class="date">1</button>
             <button class="date">2</button>
@@ -100,7 +121,8 @@
             <button class="date faded">2</button>
             <button class="date faded">3</button>
         </div>
-    </div>    
+    </div>
     <!-- CIERRE CALENDARIO-->
+
 </body>
 </html>
