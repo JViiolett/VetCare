@@ -1,68 +1,72 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const monthSelector = document.querySelector('.month-name');
-    const dateCalendar = document.querySelector('.date-calendar');
-    const prevBtn = document.querySelector('.arrow:first-of-type');
-    const nextBtn = document.querySelector('.arrow:last-of-type');
+document.addEventListener('DOMContentLoaded', function() {
+    const calendarBody = document.getElementById('calendarBody');
+    const currentMonthElement = document.getElementById('currentMonth');
+    const prevMonthButton = document.getElementById('prevMonth');
+    const nextMonthButton = document.getElementById('nextMonth');
 
-    const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
-                    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     let currentDate = new Date();
 
-    function updateCalendar(date) {
-        monthSelector.textContent = `${months[date.getMonth()]} ${date.getFullYear()}`;
+    function generateCalendar(year, month) {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const today = new Date();
 
-        const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-        const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-        const daysInPrevMonth = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
+        currentMonthElement.textContent = firstDay.toLocaleString('es-ES', { month: 'long', year: 'numeric' });
 
-        dateCalendar.innerHTML = '';
+        let dateString = '';
 
-        // Días del mes anterior
-        for (let i = firstDayOfMonth - 1; i >= 0; i--) {
-            const day = document.createElement('button');
-            day.classList.add('date', 'faded');
-            day.textContent = daysInPrevMonth - i;
-            dateCalendar.appendChild(day);
+        // Rellenar los días del mes anterior
+        for (let i = 0; i < firstDay.getDay(); i++) {
+            dateString += '<td class="other-month"></td>';
         }
 
-        // Días del mes actual
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dayBtn = document.createElement('button');
-            dayBtn.classList.add('date');
-            dayBtn.textContent = day;
-
-            if (day === currentDate.getDate() &&
-                date.getMonth() === currentDate.getMonth() &&
-                date.getFullYear() === currentDate.getFullYear()) {
-                dayBtn.classList.add('current-day');
+        // Rellenar los días del mes actual
+        for (let i = 1; i <= lastDay.getDate(); i++) {
+            if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                dateString += `<td class="current-day">${i}</td>`;
+            } else {
+                dateString += `<td>${i}</td>`;
             }
 
-            dayBtn.addEventListener('click', () => {
-                alert(`Has seleccionado el día ${day} de ${months[date.getMonth()]} ${date.getFullYear()}`);
-            });
-
-            dateCalendar.appendChild(dayBtn);
+            if ((firstDay.getDay() + i - 1) % 7 === 6) {
+                dateString += '</tr><tr>';
+            }
         }
 
-        // Días del mes siguiente para completar la semana
-        const totalButtons = dateCalendar.childElementCount;
-        for (let i = 1; i <= (42 - totalButtons); i++) {
-            const day = document.createElement('button');
-            day.classList.add('date', 'faded');
-            day.textContent = i;
-            dateCalendar.appendChild(day);
+        // Rellenar los días del mes siguiente
+        const remainingDays = 7 - lastDay.getDay();
+        for (let i = 1; i <= remainingDays; i++) {
+            dateString += '<td class="other-month"></td>';
+        }
+
+        calendarBody.innerHTML = `<tr>${dateString}</tr>`;
+
+        // Agregar evento click a las celdas del calendario
+        const cells = calendarBody.getElementsByTagName('td');
+        for (let cell of cells) {
+            cell.addEventListener('click', function() {
+                if (this.textContent) {
+                    alert(`Has seleccionado el día ${this.textContent} de ${currentMonthElement.textContent}`);
+                }
+            });
         }
     }
 
-    prevBtn.addEventListener('click', () => {
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+    prevMonthButton.addEventListener('click', function() {
         currentDate.setMonth(currentDate.getMonth() - 1);
-        updateCalendar(currentDate);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     });
 
-    nextBtn.addEventListener('click', () => {
+    nextMonthButton.addEventListener('click', function() {
         currentDate.setMonth(currentDate.getMonth() + 1);
-        updateCalendar(currentDate);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     });
+});
 
-    updateCalendar(currentDate);
+// Alternar la clase de la barra lateral
+document.querySelector('.toggle-btn').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.toggle('collapsed');
+    document.querySelector('.main-content').classList.toggle('expanded');
 });

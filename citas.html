@@ -21,108 +21,131 @@
     <title>Citas Medicas</title>
 </head>
 <body>
-    <nav>
-        <div class="barra"></div>
-    </nav>
-    <!--BARRA LATERAL-->
-    <div class="barra-lateral">
-        <div class="nome">
-            <img src="img/logos/logo.png" alt="" id="logom">
-            <span class="nom">VetCare</span> 
-        </div>
-        <button class="boton">
-            <i class="bi bi-plus-lg"></i>
-            <span>Agendar Cita</span>
-        </button>  
-        <ul class="icon">
-            <li><a href="#"><i class="bi bi-calendar-event"></i><span>Citas Médicas</span></a></li>
-            <li><a href="#"><i class="bi bi-clipboard-heart"></i><span>Historial Medico</span></a></li>
-        </ul>
-        <!-- Línea separadora ocupando toda la barra lateral -->
-        <div class="separator"></div>
-        <ul class="icon-infe">
-            <li><a href="#"><i class="bi bi-box-arrow-right"></i><span>Cerrar Sesion</span></a></li>
-        </ul>
-    </div> <!-- Cierre Div barra lateral-->
-    
-    <!-------------------------------------------------- Section Especialidad ------------------------- -->
-     <div class="container-select">
-        <select class="form-select">
-            <option selected disabled>Especialidad</option>
-            <option class="options" value="1">One</option>
-            <option class="options" value="2">Two</option>
-            <option class="options" value="3">Three</option>
-        </select>
-        <select class="vet-form">
-            <option selected disabled>Veterinario</option>
-            <option class="options" value="1">One</option>
-            <option class="options" value="2">Two</option>
-            <option class="options" value="3">Three</option>
-        </select>
-        <select class="time-select">
-            <option selected disabled>Hora</option>
-            <option class="options" value="1">One</option>
-            <option class="options" value="2">Two</option>
-            <option class="options" value="3">Three</option>
-        </select>
-     </div>
-
-
-     <!-- ----------------------------------------------------- CALENDARIO ------------------------------------->
-    <div class="datepicker">
-        <div class="datepicker-top">
-            <div class="month-selector">
-                <button class="arrow"><i class="bi bi-chevron-left"></i></button>
-                <span class="month-name">December 2020</span>
-                <button class="arrow"><i class="bi bi-chevron-right"></i></button>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="img/logos/logo.png" alt="">
+                    <h2>VetCare</h2>
+                </div>
             </div>
-        </div>
-        <div class="datepicker-calendar">
-            <span class="day">Lu</span>
-            <span class="day">Ma</span>
-            <span class="day">Mi</span>
-            <span class="day">Ju</span>
-            <span class="day">Vi</span>
-            <span class="day">Sa</span>
-            <span class="day">Do</span>
-            <button class="date faded">30</button>
-            <button class="date">1</button>
-            <button class="date">2</button>
-            <button class="date">3</button>
-            <button class="date">4</button>
-            <button class="date">5</button>
-            <button class="date">6</button>
-            <button class="date">7</button>
-            <button class="date">8</button>
-            <button class="date current-day">9</button>
-            <button class="date">10</button>
-            <button class="date">11</button>
-            <button class="date">12</button>
-            <button class="date">13</button>
-            <button class="date">14</button>
-            <button class="date">15</button>
-            <button class="date">16</button>
-            <button class="date">17</button>
-            <button class="date">18</button>
-            <button class="date">19</button>
-            <button class="date">20</button>
-            <button class="date">21</button>
-            <button class="date">22</button>
-            <button class="date">23</button>
-            <button class="date">24</button>
-            <button class="date">25</button>
-            <button class="date">26</button>
-            <button class="date">27</button>
-            <button class="date">28</button>
-            <button class="date">29</button>
-            <button class="date">30</button>
-            <button class="date">31</button>
-            <button class="date faded">1</button>
-            <button class="date faded">2</button>
-            <button class="date faded">3</button>
-        </div>
+            <button class="boton">
+                <a href="citas.html" style="text-decoration: none;">
+                    <i class="bi bi-plus-lg"></i>
+                    <span class="gen-cita">Generar Cita</span>
+                </a>
+            </button>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Citas</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="bi bi-clipboard-heart"></i>
+                    <span>Historial Médico</span>
+                </a>
+                <a href="#" class="nav-item top-aling">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Cerrar Sesion</span>
+                </a>
+            </nav>
+        </aside>
+        <!---------------------------------------Contenido barra superior------------------------------->
+        <main class="main-content">
+            <header class="top-bar">
+                <button class="toggle-btn" aria-label="Toggle Sidebar">☰</button>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <img src="img/post/imgperfil.jpg" alt="Avatar del usuario" class="user-avatar">
+                        <span class="user-name">Juana Rojas</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="#" class="nav-item">
+                            <i class="bi bi-person"></i>
+                            <span>Perfil</span>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <section class="content">
+                <div class="appointment-section">
+                    <div class="appointment-form">
+                        <h2>Agendar Cita</h2>
+                        <div class="form-group full-width">
+                            <label for="specialty">Especialidad</label>
+                            <select id="specialty" class="form-control">
+                                <option value="" selected disabled>Selecciona una especialidad</option>
+                                <option value="general">Medicina General</option>
+                                <option value="cardiology">Cardiología</option>
+                                <option value="dermatology">Dermatología</option>
+                                <option value="neurology">Neurología</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="veterinario">Veterinario</label>
+                            <select id="veterinario" class="form-control">
+                                <option value="" selected disabled>Selecciona una hora</option>
+                                <option value="Natalia">Dr Natalia</option>
+                                <option value="Oscar">Dr Oscar</option>
+                                <option value="Lina">Dr Lina</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Hora</label>
+                            <select id="time" class="form-control">
+                                <option value="" selected disabled>Selecciona una hora</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-name">Nombre de la mascota</label>
+                            <input type="text" id="owner-name" class="form-control" placeholder="Nombre de la mascota">
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-name">Nombre del Dueño</label>
+                            <input type="text" id="owner-name" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-lastname">Apellido del Dueño</label>
+                            <input type="text" id="owner-lastname" class="form-control" placeholder="Apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-phone">Celular del Dueño</label>
+                            <input type="tel" id="owner-phone" class="form-control" placeholder="Número de celular">
+                        </div>
+                        <button class="generate-appointment">Agendar Cita</button>
+                    </div>
+                    <!-- -------------------------------------- Calendario ------------------------------------------------->
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <button id="prevMonth"><i class="bi bi-chevron-left"></i></button>
+                            <h3 id="currentMonth"></h3>
+                            <button id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>L</th>
+                                    <th>M</th>
+                                    <th>M</th>
+                                    <th>J</th>
+                                    <th>V</th>
+                                    <th>S</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendarBody">
+                                <!-- El cuerpo del calendario se llenará con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    <!-- CIERRE CALENDARIO-->
-
 </body>
 </html>
