@@ -96,6 +96,7 @@ body {
     position: absolute;
     bottom: 3.5vh; /* Coloca el elemento en la parte inferior */
     width: 100%;
+    border-top: 1px solid color#595959 ;
 }
 .sidebar-nav {
     display: flex;
@@ -166,13 +167,21 @@ body {
 }
 .user-dropdown {
     position: absolute;
-    right: 0;
-    top: 100%;
+    width: 80%;
+    height: 7vh;
+    margin-top: 1vh;
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 0.375rem;
-    padding: 0.5rem;
     display: none;
+}
+.user-dropdown span{
+    font-family: "Bree Serif", serif;
+    color: #595959;
+}
+.bi-person{
+    color: #595959;
+    margin-right: 1vw;
 }
 .user-menu:hover .user-dropdown {
     display: block;
@@ -268,15 +277,15 @@ body {
 }
 .calendar td:hover {
     background-color: #26916d;
-    border-radius: 30px;
+    border-radius:100%;
 }
 .calendar .current-day {
     background-color: #7cdab2;
     color: white;
-    border-radius: 50%;
+    border-radius: 100%;
 }
 .calendar .other-month {
-    color: #ccc;
+    color: #ccc; 
 }
 #currentMonth {
     font-family: "Bree Serif", serif;
