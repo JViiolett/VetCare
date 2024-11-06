@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar los iconos de Lucide
-    lucide.createIcons();
-
     // Carrusel principal
     const mainCarousel = document.querySelector('.carousel-container');
     const mainCarouselImages = document.querySelectorAll('.carousel-image');
